@@ -1,4 +1,4 @@
-# mobile_design
+# investment_mobile_ui
 
 A new Flutter project.
 

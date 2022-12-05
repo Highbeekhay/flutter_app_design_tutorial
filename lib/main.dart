@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:bottom_bar_matu/bottom_bar_matu.dart';
+import 'package:ionicons/ionicons.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,27 +12,59 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    Color primaryColour = Colors.red;
+    Color secondaryColour = Colors.blueGrey;
+    Color textColour = Colors.black12;
+    double borderRadius = 5.0;
+
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
+      theme: ThemeData.light().copyWith(
+        useMaterial3: true,
+        textSelectionTheme: Theme.of(context)
+            .textSelectionTheme
+            .copyWith(cursorColor: primaryColour),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.black,
+          primary: primaryColour,
+          brightness: Brightness.light,
+          secondary: secondaryColour,
+        ),
+        iconTheme: IconThemeData(color: primaryColour),
+        textButtonTheme: TextButtonThemeData(
+          style: TextButton.styleFrom(foregroundColor: primaryColour),
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: primaryColour,
+            elevation: 0,
+            foregroundColor: Colors.white,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(borderRadius),
+            ),
+          ),
+        ),
+        appBarTheme: Theme.of(context).appBarTheme.copyWith(
+              titleTextStyle: Theme.of(context)
+                  .textTheme
+                  .headline6!
+                  .copyWith(fontWeight: FontWeight.bold, color: textColour),
+              centerTitle: false,
+              color: Colors.white,
+              foregroundColor: secondaryColour,
+              iconTheme: IconThemeData(color: primaryColour),
+            ),
+        textTheme: Theme.of(context)
+            .textTheme
+            .apply(displayColor: textColour, bodyColor: textColour),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+  const MyHomePage({super.key});
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -41,26 +75,11 @@ class MyHomePage extends StatefulWidget {
   // used by the build method of the State. Fields in a Widget subclass are
   // always marked "final".
 
-  final String title;
-
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -70,46 +89,203 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+      bottomNavigationBar: Container(
+        color: Colors.red[700],
+        child: BottomBarBubble(
+          height: 50,
+          selectedIndex: 0,
+          bubbleSize: 2,
+          color: Colors.white,
+          items: [
+            BottomBarItem(
+              iconData: Ionicons.home_outline,
+              iconSize: 24,
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
+            BottomBarItem(iconData: Icons.person_outline_rounded, iconSize: 24),
+            BottomBarItem(iconData: Icons.chat_outlined, iconSize: 24),
+            BottomBarItem(
+                iconData: Icons.calendar_today_outlined, iconSize: 24),
           ],
+          onSelect: (index) {},
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      body: Column(
+        children: [
+          Container(
+            color: Colors.red[700],
+            padding: const EdgeInsets.fromLTRB(20, 50, 20, 30),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Date:",
+                          style:
+                              Theme.of(context).textTheme.titleMedium!.copyWith(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                        ),
+                        const SizedBox(height: 5),
+                        Text(
+                          "03-12-2022",
+                          style: Theme.of(context)
+                              .textTheme
+                              .titleSmall!
+                              .copyWith(color: Colors.white),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        SizedBox(
+                          width: 40,
+                          height: 40,
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            child: Icon(
+                              Ionicons.search,
+                              color: Colors.black,
+                              size: 20,
+                            ),
+                            style: ElevatedButton.styleFrom(
+                              shape: CircleBorder(),
+                              padding: EdgeInsets.all(10),
+                              backgroundColor: Colors.white,
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 12),
+                        SizedBox(
+                          width: 40,
+                          height: 40,
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            child: Icon(
+                              Ionicons.notifications_outline,
+                              color: Colors.black,
+                              size: 20,
+                            ),
+                            style: ElevatedButton.styleFrom(
+                              shape: CircleBorder(),
+                              padding: EdgeInsets.all(10),
+                              backgroundColor: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+                SizedBox(height: 30),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Total Balance",
+                          style: Theme.of(context)
+                              .textTheme
+                              .titleMedium!
+                              .copyWith(color: Colors.white),
+                        ),
+                        SizedBox(height: 5),
+                        Text(
+                          "\$ 23,500",
+                          style:
+                              Theme.of(context).textTheme.headline4!.copyWith(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        SizedBox(
+                          width: 30,
+                          height: 30,
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            child: Icon(
+                              Ionicons.add,
+                              color: Colors.black,
+                              size: 12,
+                            ),
+                            style: ElevatedButton.styleFrom(
+                              shape: CircleBorder(),
+                              padding: EdgeInsets.symmetric(horizontal: 8),
+                              backgroundColor: Colors.white,
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 5),
+                        SizedBox(
+                          width: 30,
+                          height: 30,
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            child: Icon(
+                              Ionicons.remove,
+                              color: Colors.black,
+                              size: 12,
+                            ),
+                            style: ElevatedButton.styleFrom(
+                              shape: CircleBorder(),
+                              padding: EdgeInsets.symmetric(horizontal: 8),
+                              backgroundColor: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
+                )
+              ],
+            ),
+          ),
+          SingleChildScrollView(
+            child: Column(
+              children: [
+                Container(
+                  padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        children: [
+                          Text(
+                            'Real Estate Pack',
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleMedium!
+                                .copyWith(
+                                  color: Colors.black54,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        width: 40,
+                      ),
+                      Row(
+                        children: [Icon(Icons.home)],
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
     );
   }
 }
