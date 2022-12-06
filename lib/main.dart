@@ -1,3 +1,4 @@
+import 'package:bottom_bar_matu/components/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:bottom_bar_matu/bottom_bar_matu.dart';
 import 'package:ionicons/ionicons.dart';
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
     double borderRadius = 5.0;
 
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData.light().copyWith(
         useMaterial3: true,
@@ -109,182 +111,828 @@ class _MyHomePageState extends State<MyHomePage> {
           onSelect: (index) {},
         ),
       ),
-      body: Column(
-        children: [
-          Container(
-            color: Colors.red[700],
-            padding: const EdgeInsets.fromLTRB(20, 50, 20, 30),
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Date:",
-                          style:
-                              Theme.of(context).textTheme.titleMedium!.copyWith(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                        ),
-                        const SizedBox(height: 5),
-                        Text(
-                          "03-12-2022",
-                          style: Theme.of(context)
-                              .textTheme
-                              .titleSmall!
-                              .copyWith(color: Colors.white),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        SizedBox(
-                          width: 40,
-                          height: 40,
-                          child: ElevatedButton(
-                            onPressed: () {},
-                            child: Icon(
-                              Ionicons.search,
-                              color: Colors.black,
-                              size: 20,
-                            ),
-                            style: ElevatedButton.styleFrom(
-                              shape: CircleBorder(),
-                              padding: EdgeInsets.all(10),
-                              backgroundColor: Colors.white,
-                            ),
-                          ),
-                        ),
-                        SizedBox(width: 12),
-                        SizedBox(
-                          width: 40,
-                          height: 40,
-                          child: ElevatedButton(
-                            onPressed: () {},
-                            child: Icon(
-                              Ionicons.notifications_outline,
-                              color: Colors.black,
-                              size: 20,
-                            ),
-                            style: ElevatedButton.styleFrom(
-                              shape: CircleBorder(),
-                              padding: EdgeInsets.all(10),
-                              backgroundColor: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-                SizedBox(height: 30),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Total Balance",
-                          style: Theme.of(context)
-                              .textTheme
-                              .titleMedium!
-                              .copyWith(color: Colors.white),
-                        ),
-                        SizedBox(height: 5),
-                        Text(
-                          "\$ 23,500",
-                          style:
-                              Theme.of(context).textTheme.headline4!.copyWith(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        SizedBox(
-                          width: 30,
-                          height: 30,
-                          child: ElevatedButton(
-                            onPressed: () {},
-                            child: Icon(
-                              Ionicons.add,
-                              color: Colors.black,
-                              size: 12,
-                            ),
-                            style: ElevatedButton.styleFrom(
-                              shape: CircleBorder(),
-                              padding: EdgeInsets.symmetric(horizontal: 8),
-                              backgroundColor: Colors.white,
-                            ),
-                          ),
-                        ),
-                        SizedBox(height: 5),
-                        SizedBox(
-                          width: 30,
-                          height: 30,
-                          child: ElevatedButton(
-                            onPressed: () {},
-                            child: Icon(
-                              Ionicons.remove,
-                              color: Colors.black,
-                              size: 12,
-                            ),
-                            style: ElevatedButton.styleFrom(
-                              shape: CircleBorder(),
-                              padding: EdgeInsets.symmetric(horizontal: 8),
-                              backgroundColor: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ],
-                    )
-                  ],
-                )
-              ],
-            ),
-          ),
-          SingleChildScrollView(
-            child: Column(
-              children: [
-                Container(
-                  padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-                  child: Row(
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          children: [
+            Container(
+              color: Colors.red[700],
+              padding: const EdgeInsets.fromLTRB(20, 50, 20, 30),
+              child: Column(
+                children: [
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Real Estate Pack',
+                            "Date:",
                             style: Theme.of(context)
                                 .textTheme
                                 .titleMedium!
                                 .copyWith(
-                                  color: Colors.black54,
+                                  color: Colors.white,
                                   fontWeight: FontWeight.bold,
                                 ),
                           ),
+                          const SizedBox(height: 5),
+                          Text(
+                            "03-12-2022",
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleSmall!
+                                .copyWith(color: Colors.white),
+                          ),
                         ],
                       ),
-                      SizedBox(
-                        width: 40,
-                      ),
                       Row(
-                        children: [Icon(Icons.home)],
-                      ),
+                        children: [
+                          SizedBox(
+                            width: 40,
+                            height: 40,
+                            child: ElevatedButton(
+                              onPressed: () {},
+                              child: Icon(
+                                Ionicons.search,
+                                color: Colors.black,
+                                size: 20,
+                              ),
+                              style: ElevatedButton.styleFrom(
+                                shape: CircleBorder(),
+                                padding: EdgeInsets.all(10),
+                                backgroundColor: Colors.white,
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: 12),
+                          SizedBox(
+                            width: 40,
+                            height: 40,
+                            child: ElevatedButton(
+                              onPressed: () {},
+                              child: Icon(
+                                Ionicons.notifications_outline,
+                                color: Colors.black,
+                                size: 20,
+                              ),
+                              style: ElevatedButton.styleFrom(
+                                shape: CircleBorder(),
+                                padding: EdgeInsets.all(10),
+                                backgroundColor: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ],
+                      )
                     ],
                   ),
-                ),
-              ],
+                  SizedBox(height: 30),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Total Balance",
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleMedium!
+                                .copyWith(color: Colors.white),
+                          ),
+                          SizedBox(height: 5),
+                          Text(
+                            "\$ 23,500",
+                            style:
+                                Theme.of(context).textTheme.headline4!.copyWith(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                          ),
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          SizedBox(
+                            width: 30,
+                            height: 30,
+                            child: ElevatedButton(
+                              onPressed: () {},
+                              child: Icon(
+                                Ionicons.add,
+                                color: Colors.black,
+                                size: 12,
+                              ),
+                              style: ElevatedButton.styleFrom(
+                                shape: CircleBorder(),
+                                padding: EdgeInsets.symmetric(horizontal: 8),
+                                backgroundColor: Colors.white,
+                              ),
+                            ),
+                          ),
+                          SizedBox(height: 5),
+                          SizedBox(
+                            width: 30,
+                            height: 30,
+                            child: ElevatedButton(
+                              onPressed: () {},
+                              child: Icon(
+                                Ionicons.remove,
+                                color: Colors.black,
+                                size: 12,
+                              ),
+                              style: ElevatedButton.styleFrom(
+                                shape: CircleBorder(),
+                                padding: EdgeInsets.symmetric(horizontal: 8),
+                                backgroundColor: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
+                  )
+                ],
+              ),
             ),
-          )
-        ],
+            SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Column(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.fromLTRB(20, 10, 10, 10),
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              children: [
+                                Text(
+                                  'Real Estate Pack',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleMedium!
+                                      .copyWith(
+                                        color: Colors.black87,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              width: 40,
+                              height: 5,
+                            ),
+                            Row(
+                              children: [
+                                ElevatedButton(
+                                  onPressed: () {},
+                                  child: Icon(
+                                    Icons.home_outlined,
+                                    color: Colors.black45,
+                                    size: 20,
+                                  ),
+                                  style: ElevatedButton.styleFrom(
+                                    shape: CircleBorder(
+                                      side: BorderSide(color: Colors.red),
+                                    ),
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 8),
+                                    backgroundColor: Colors.white,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        SizedBox(),
+                        Row(
+                          children: [
+                            Column(
+                              children: [
+                                Text(
+                                  "Risk",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleMedium!
+                                      .copyWith(
+                                        color: Colors.black54,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              width: 70,
+                            ),
+                            Row(
+                              children: [
+                                Icon(Icons.signal_cellular_alt_rounded),
+                              ],
+                            ),
+                          ],
+                        ),
+                        SizedBox(),
+                        Row(
+                          children: [
+                            Column(
+                              children: [
+                                Text(
+                                  "Forecast",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleMedium!
+                                      .copyWith(
+                                        color: Colors.black54,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              width: 41,
+                            ),
+                            Row(
+                              children: [
+                                Text(
+                                  "Cost",
+                                  style: TextStyle(
+                                    color: Colors.black54,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        SizedBox(),
+                        Row(
+                          children: [
+                            Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    ElevatedButton(
+                                      onPressed: () {},
+                                      child: Icon(
+                                        Icons.near_me_rounded,
+                                        color: Colors.white,
+                                        size: 10,
+                                      ),
+                                      style: ElevatedButton.styleFrom(
+                                        minimumSize: Size(25, 35),
+                                        shape: CircleBorder(),
+                                        padding:
+                                            EdgeInsets.fromLTRB(1, 1, 1, 1),
+                                        backgroundColor: Colors.green,
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 5,
+                                    ),
+                                    Text(
+                                      "4,8%",
+                                      style: TextStyle(
+                                        color: Colors.black87,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              width: 54,
+                            ),
+                            Row(
+                              children: [
+                                Text(
+                                  '0,32% P.A.',
+                                  style: TextStyle(
+                                    color: Colors.black87,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  Divider(
+                    color: Color.fromARGB(255, 238, 201, 198),
+                    indent: 20,
+                    endIndent: 20,
+                  ),
+                  Container(
+                    padding: const EdgeInsets.fromLTRB(20, 10, 10, 10),
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              children: [
+                                Text(
+                                  'Sustainable Way 23',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleMedium!
+                                      .copyWith(
+                                        color: Colors.black87,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              width: 40,
+                              height: 5,
+                            ),
+                            Row(
+                              children: [
+                                ElevatedButton(
+                                  onPressed: () {},
+                                  child: Icon(
+                                    Icons.my_library_books_rounded,
+                                    color: Colors.black45,
+                                    size: 20,
+                                  ),
+                                  style: ElevatedButton.styleFrom(
+                                    shape: CircleBorder(
+                                      side: BorderSide(color: Colors.red),
+                                    ),
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 8),
+                                    backgroundColor: Colors.white,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        SizedBox(),
+                        Row(
+                          children: [
+                            Column(
+                              children: [
+                                Text(
+                                  "Risk",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleMedium!
+                                      .copyWith(
+                                        color: Colors.black54,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              width: 70,
+                            ),
+                            Row(
+                              children: [
+                                Icon(Icons.signal_cellular_alt_rounded),
+                              ],
+                            ),
+                          ],
+                        ),
+                        SizedBox(),
+                        Row(
+                          children: [
+                            Column(
+                              children: [
+                                Text(
+                                  "Forecast",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleMedium!
+                                      .copyWith(
+                                        color: Colors.black54,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              width: 41,
+                            ),
+                            Row(
+                              children: [
+                                Text(
+                                  "Cost",
+                                  style: TextStyle(
+                                    color: Colors.black54,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        SizedBox(),
+                        Row(
+                          children: [
+                            Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    ElevatedButton(
+                                      onPressed: () {},
+                                      child: Icon(
+                                        Icons.near_me_rounded,
+                                        color: Colors.white,
+                                        size: 10,
+                                      ),
+                                      style: ElevatedButton.styleFrom(
+                                        minimumSize: Size(25, 35),
+                                        shape: CircleBorder(),
+                                        padding:
+                                            EdgeInsets.fromLTRB(1, 1, 1, 1),
+                                        backgroundColor: Colors.green,
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 5,
+                                    ),
+                                    Text(
+                                      "4,2%",
+                                      style: TextStyle(
+                                        color: Colors.black87,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              width: 54,
+                            ),
+                            Row(
+                              children: [
+                                Text(
+                                  '0,38% P.A.',
+                                  style: TextStyle(
+                                    color: Colors.black87,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  Divider(
+                    color: Color.fromARGB(255, 238, 201, 198),
+                    indent: 20,
+                    endIndent: 20,
+                  ),
+                  Container(
+                    padding: const EdgeInsets.fromLTRB(20, 10, 10, 10),
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              children: [
+                                Text(
+                                  'Family Future',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleMedium!
+                                      .copyWith(
+                                        color: Colors.black87,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              width: 40,
+                              height: 5,
+                            ),
+                            Row(
+                              children: [
+                                ElevatedButton(
+                                  onPressed: () {},
+                                  child: Icon(
+                                    Icons.person_pin_circle_outlined,
+                                    color: Colors.black45,
+                                    size: 20,
+                                  ),
+                                  style: ElevatedButton.styleFrom(
+                                    shape: CircleBorder(
+                                      side: BorderSide(color: Colors.red),
+                                    ),
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 8),
+                                    backgroundColor: Colors.white,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        SizedBox(),
+                        Row(
+                          children: [
+                            Column(
+                              children: [
+                                Text(
+                                  "Risk",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleMedium!
+                                      .copyWith(
+                                        color: Colors.black54,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              width: 70,
+                            ),
+                            Row(
+                              children: [
+                                Icon(Icons.signal_cellular_alt_rounded),
+                              ],
+                            ),
+                          ],
+                        ),
+                        SizedBox(),
+                        Row(
+                          children: [
+                            Column(
+                              children: [
+                                Text(
+                                  "Forecast",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleMedium!
+                                      .copyWith(
+                                        color: Colors.black54,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              width: 41,
+                            ),
+                            Row(
+                              children: [
+                                Text(
+                                  "Cost",
+                                  style: TextStyle(
+                                    color: Colors.black54,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        SizedBox(),
+                        Row(
+                          children: [
+                            Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    ElevatedButton(
+                                      onPressed: () {},
+                                      child: Icon(
+                                        Icons.near_me_rounded,
+                                        color: Colors.white,
+                                        size: 10,
+                                      ),
+                                      style: ElevatedButton.styleFrom(
+                                        minimumSize: Size(25, 35),
+                                        shape: CircleBorder(),
+                                        padding:
+                                            EdgeInsets.fromLTRB(1, 1, 1, 1),
+                                        backgroundColor: Colors.green,
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 5,
+                                    ),
+                                    Text(
+                                      "1,6%",
+                                      style: TextStyle(
+                                        color: Colors.black87,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              width: 54,
+                            ),
+                            Row(
+                              children: [
+                                Text(
+                                  '0,40% P.A.',
+                                  style: TextStyle(
+                                    color: Colors.black87,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  Divider(
+                    color: Color.fromARGB(255, 238, 201, 198),
+                    indent: 20,
+                    endIndent: 20,
+                  ),
+                  Container(
+                    padding: const EdgeInsets.fromLTRB(20, 10, 10, 10),
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              children: [
+                                Text(
+                                  'Sustainable Pack',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleMedium!
+                                      .copyWith(
+                                        color: Colors.black87,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              width: 40,
+                              height: 5,
+                            ),
+                            Row(
+                              children: [
+                                ElevatedButton(
+                                  onPressed: () {},
+                                  child: Icon(
+                                    Icons.my_library_books_rounded,
+                                    color: Colors.black45,
+                                    size: 20,
+                                  ),
+                                  style: ElevatedButton.styleFrom(
+                                    shape: CircleBorder(
+                                      side: BorderSide(color: Colors.red),
+                                    ),
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 8),
+                                    backgroundColor: Colors.white,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        SizedBox(),
+                        Row(
+                          children: [
+                            Column(
+                              children: [
+                                Text(
+                                  "Risk",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleMedium!
+                                      .copyWith(
+                                        color: Colors.black54,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              width: 70,
+                            ),
+                            Row(
+                              children: [
+                                Icon(Icons.signal_cellular_alt_rounded),
+                              ],
+                            ),
+                          ],
+                        ),
+                        SizedBox(),
+                        Row(
+                          children: [
+                            Column(
+                              children: [
+                                Text(
+                                  "Forecast",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleMedium!
+                                      .copyWith(
+                                        color: Colors.black54,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              width: 41,
+                            ),
+                            Row(
+                              children: [
+                                Text(
+                                  "Cost",
+                                  style: TextStyle(
+                                    color: Colors.black54,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        SizedBox(),
+                        Row(
+                          children: [
+                            Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    ElevatedButton(
+                                      onPressed: () {},
+                                      child: Icon(
+                                        Icons.near_me_rounded,
+                                        color: Colors.white,
+                                        size: 10,
+                                      ),
+                                      style: ElevatedButton.styleFrom(
+                                        minimumSize: Size(25, 35),
+                                        shape: CircleBorder(),
+                                        padding:
+                                            EdgeInsets.fromLTRB(1, 1, 1, 1),
+                                        backgroundColor: Colors.green,
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 5,
+                                    ),
+                                    Text(
+                                      "2,8%",
+                                      style: TextStyle(
+                                        color: Colors.black87,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              width: 54,
+                            ),
+                            Row(
+                              children: [
+                                Text(
+                                  '0,42% P.A.',
+                                  style: TextStyle(
+                                    color: Colors.black87,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  Divider(
+                    color: Color.fromARGB(255, 238, 201, 198),
+                    indent: 20,
+                    endIndent: 20,
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
