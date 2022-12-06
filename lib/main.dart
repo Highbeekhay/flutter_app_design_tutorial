@@ -263,27 +263,23 @@ class _MyHomePageState extends State<MyHomePage> {
                   Container(
                     padding: const EdgeInsets.fromLTRB(20, 10, 10, 10),
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Column(
-                              children: [
-                                Text(
-                                  'Real Estate Pack',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .titleMedium!
-                                      .copyWith(
-                                        color: Colors.black87,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                ),
-                              ],
+                            Text(
+                              'Real Estate Pack',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleMedium!
+                                  .copyWith(
+                                    color: Colors.black87,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                             ),
                             const SizedBox(
                               width: 40,
-                              height: 5,
                             ),
                             Row(
                               children: [
@@ -310,69 +306,61 @@ class _MyHomePageState extends State<MyHomePage> {
                         SizedBox(),
                         Row(
                           children: [
-                            Column(
-                              children: [
-                                Text(
-                                  "Risk",
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .titleMedium!
-                                      .copyWith(
-                                        color: Colors.black54,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                ),
-                              ],
+                            Text(
+                              "Risk",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleMedium!
+                                  .copyWith(
+                                    color: Colors.black54,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                             ),
-                            const SizedBox(
+                            SizedBox(
                               width: 70,
                             ),
-                            Row(
-                              children: [
-                                Icon(Icons.signal_cellular_alt_rounded),
-                              ],
-                            ),
+                            Icon(Icons.signal_cellular_alt_rounded),
                           ],
                         ),
-                        SizedBox(),
+                        SizedBox(
+                          height: 5,
+                        ),
                         Row(
                           children: [
-                            Column(
-                              children: [
-                                Text(
-                                  "Forecast",
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .titleMedium!
-                                      .copyWith(
-                                        color: Colors.black54,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                ),
-                              ],
+                            Text(
+                              "Forecast",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleMedium!
+                                  .copyWith(
+                                    color: Colors.black54,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                             ),
                             const SizedBox(
                               width: 41,
                             ),
-                            Row(
-                              children: [
-                                Text(
-                                  "Cost",
-                                  style: TextStyle(
+                            Text(
+                              "Cost",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleMedium!
+                                  .copyWith(
                                     color: Colors.black54,
                                     fontWeight: FontWeight.bold,
                                   ),
-                                ),
-                              ],
                             ),
                           ],
                         ),
-                        SizedBox(),
+                        SizedBox(
+                          height: 10,
+                        ),
                         Row(
                           children: [
                             Column(
                               children: [
                                 Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     ElevatedButton(
                                       onPressed: () {},
@@ -382,10 +370,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                         size: 10,
                                       ),
                                       style: ElevatedButton.styleFrom(
-                                        minimumSize: Size(25, 35),
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 0,
+                                        ),
+                                        minimumSize: Size(22, 25),
                                         shape: CircleBorder(),
-                                        padding:
-                                            EdgeInsets.fromLTRB(1, 1, 1, 1),
                                         backgroundColor: Colors.green,
                                       ),
                                     ),
@@ -404,18 +393,14 @@ class _MyHomePageState extends State<MyHomePage> {
                               ],
                             ),
                             const SizedBox(
-                              width: 54,
+                              width: 57,
                             ),
-                            Row(
-                              children: [
-                                Text(
-                                  '0,32% P.A.',
-                                  style: TextStyle(
-                                    color: Colors.black87,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ],
+                            Text(
+                              '0,32% P.A.',
+                              style: TextStyle(
+                                color: Colors.black87,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ],
                         ),
@@ -427,26 +412,23 @@ class _MyHomePageState extends State<MyHomePage> {
                     indent: 20,
                     endIndent: 20,
                   ),
+                  // End of the first conmtainer
                   Container(
-                    padding: const EdgeInsets.fromLTRB(20, 10, 10, 10),
+                    padding: const EdgeInsets.fromLTRB(20, 3, 10, 10),
                     child: Column(
                       children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Column(
-                              children: [
-                                Text(
-                                  'Sustainable Way 23',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .titleMedium!
-                                      .copyWith(
-                                        color: Colors.black87,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                ),
-                              ],
+                            Text(
+                              'Sustainable Way 23',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleMedium!
+                                  .copyWith(
+                                    color: Colors.black87,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                             ),
                             const SizedBox(
                               width: 40,
@@ -477,67 +459,59 @@ class _MyHomePageState extends State<MyHomePage> {
                         SizedBox(),
                         Row(
                           children: [
-                            Column(
-                              children: [
-                                Text(
-                                  "Risk",
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .titleMedium!
-                                      .copyWith(
-                                        color: Colors.black54,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                ),
-                              ],
+                            Text(
+                              "Risk",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleMedium!
+                                  .copyWith(
+                                    color: Colors.black54,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                             ),
                             const SizedBox(
                               width: 70,
                             ),
-                            Row(
-                              children: [
-                                Icon(Icons.signal_cellular_alt_rounded),
-                              ],
-                            ),
+                            Icon(Icons.signal_cellular_alt_rounded),
                           ],
                         ),
-                        SizedBox(),
+                        SizedBox(
+                          height: 5,
+                        ),
                         Row(
                           children: [
-                            Column(
-                              children: [
-                                Text(
-                                  "Forecast",
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .titleMedium!
-                                      .copyWith(
-                                        color: Colors.black54,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                ),
-                              ],
+                            Text(
+                              "Forecast",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleMedium!
+                                  .copyWith(
+                                    color: Colors.black54,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                             ),
                             const SizedBox(
                               width: 41,
                             ),
-                            Row(
-                              children: [
-                                Text(
-                                  "Cost",
-                                  style: TextStyle(
+                            Text(
+                              "Cost",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleMedium!
+                                  .copyWith(
                                     color: Colors.black54,
                                     fontWeight: FontWeight.bold,
                                   ),
-                                ),
-                              ],
                             ),
                           ],
                         ),
-                        SizedBox(),
+                        SizedBox(
+                          height: 10,
+                        ),
                         Row(
                           children: [
                             Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Row(
                                   children: [
@@ -549,10 +523,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                         size: 10,
                                       ),
                                       style: ElevatedButton.styleFrom(
-                                        minimumSize: Size(25, 35),
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 0,
+                                        ),
+                                        minimumSize: Size(22, 25),
                                         shape: CircleBorder(),
-                                        padding:
-                                            EdgeInsets.fromLTRB(1, 1, 1, 1),
                                         backgroundColor: Colors.green,
                                       ),
                                     ),
@@ -573,16 +548,12 @@ class _MyHomePageState extends State<MyHomePage> {
                             const SizedBox(
                               width: 54,
                             ),
-                            Row(
-                              children: [
-                                Text(
-                                  '0,38% P.A.',
-                                  style: TextStyle(
-                                    color: Colors.black87,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ],
+                            Text(
+                              '0,38% P.A.',
+                              style: TextStyle(
+                                color: Colors.black87,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ],
                         ),
@@ -594,26 +565,23 @@ class _MyHomePageState extends State<MyHomePage> {
                     indent: 20,
                     endIndent: 20,
                   ),
+                  // End of the second container
                   Container(
-                    padding: const EdgeInsets.fromLTRB(20, 10, 10, 10),
+                    padding: const EdgeInsets.fromLTRB(20, 3, 10, 10),
                     child: Column(
                       children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Column(
-                              children: [
-                                Text(
-                                  'Family Future',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .titleMedium!
-                                      .copyWith(
-                                        color: Colors.black87,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                ),
-                              ],
+                            Text(
+                              'Family Future',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleMedium!
+                                  .copyWith(
+                                    color: Colors.black87,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                             ),
                             const SizedBox(
                               width: 40,
@@ -644,67 +612,59 @@ class _MyHomePageState extends State<MyHomePage> {
                         SizedBox(),
                         Row(
                           children: [
-                            Column(
-                              children: [
-                                Text(
-                                  "Risk",
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .titleMedium!
-                                      .copyWith(
-                                        color: Colors.black54,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                ),
-                              ],
+                            Text(
+                              "Risk",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleMedium!
+                                  .copyWith(
+                                    color: Colors.black54,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                             ),
                             const SizedBox(
                               width: 70,
                             ),
-                            Row(
-                              children: [
-                                Icon(Icons.signal_cellular_alt_rounded),
-                              ],
-                            ),
+                            Icon(Icons.signal_cellular_alt_rounded),
                           ],
                         ),
-                        SizedBox(),
+                        SizedBox(
+                          height: 5,
+                        ),
                         Row(
                           children: [
-                            Column(
-                              children: [
-                                Text(
-                                  "Forecast",
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .titleMedium!
-                                      .copyWith(
-                                        color: Colors.black54,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                ),
-                              ],
+                            Text(
+                              "Forecast",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleMedium!
+                                  .copyWith(
+                                    color: Colors.black54,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                             ),
                             const SizedBox(
                               width: 41,
                             ),
-                            Row(
-                              children: [
-                                Text(
-                                  "Cost",
-                                  style: TextStyle(
+                            Text(
+                              "Cost",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleMedium!
+                                  .copyWith(
                                     color: Colors.black54,
                                     fontWeight: FontWeight.bold,
                                   ),
-                                ),
-                              ],
                             ),
                           ],
                         ),
-                        SizedBox(),
+                        SizedBox(
+                          height: 10,
+                        ),
                         Row(
                           children: [
                             Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Row(
                                   children: [
@@ -716,10 +676,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                         size: 10,
                                       ),
                                       style: ElevatedButton.styleFrom(
-                                        minimumSize: Size(25, 35),
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 0,
+                                        ),
+                                        minimumSize: Size(22, 25),
                                         shape: CircleBorder(),
-                                        padding:
-                                            EdgeInsets.fromLTRB(1, 1, 1, 1),
                                         backgroundColor: Colors.green,
                                       ),
                                     ),
@@ -740,16 +701,12 @@ class _MyHomePageState extends State<MyHomePage> {
                             const SizedBox(
                               width: 54,
                             ),
-                            Row(
-                              children: [
-                                Text(
-                                  '0,40% P.A.',
-                                  style: TextStyle(
-                                    color: Colors.black87,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ],
+                            Text(
+                              '0,40% P.A.',
+                              style: TextStyle(
+                                color: Colors.black87,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ],
                         ),
@@ -761,26 +718,23 @@ class _MyHomePageState extends State<MyHomePage> {
                     indent: 20,
                     endIndent: 20,
                   ),
+                  // End of the third container
                   Container(
-                    padding: const EdgeInsets.fromLTRB(20, 10, 10, 10),
+                    padding: const EdgeInsets.fromLTRB(20, 3, 10, 10),
                     child: Column(
                       children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Column(
-                              children: [
-                                Text(
-                                  'Sustainable Pack',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .titleMedium!
-                                      .copyWith(
-                                        color: Colors.black87,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                ),
-                              ],
+                            Text(
+                              'Sustainable Pack',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleMedium!
+                                  .copyWith(
+                                    color: Colors.black87,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                             ),
                             const SizedBox(
                               width: 40,
@@ -811,69 +765,62 @@ class _MyHomePageState extends State<MyHomePage> {
                         SizedBox(),
                         Row(
                           children: [
-                            Column(
-                              children: [
-                                Text(
-                                  "Risk",
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .titleMedium!
-                                      .copyWith(
-                                        color: Colors.black54,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                ),
-                              ],
+                            Text(
+                              "Risk",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleMedium!
+                                  .copyWith(
+                                    color: Colors.black54,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                             ),
                             const SizedBox(
                               width: 70,
                             ),
-                            Row(
-                              children: [
-                                Icon(Icons.signal_cellular_alt_rounded),
-                              ],
-                            ),
+                            Icon(Icons.signal_cellular_alt_rounded),
                           ],
                         ),
-                        SizedBox(),
+                        SizedBox(
+                          height: 5,
+                        ),
                         Row(
                           children: [
-                            Column(
-                              children: [
-                                Text(
-                                  "Forecast",
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .titleMedium!
-                                      .copyWith(
-                                        color: Colors.black54,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                ),
-                              ],
+                            Text(
+                              "Forecast",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleMedium!
+                                  .copyWith(
+                                    color: Colors.black54,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                             ),
                             const SizedBox(
                               width: 41,
                             ),
-                            Row(
-                              children: [
-                                Text(
-                                  "Cost",
-                                  style: TextStyle(
+                            Text(
+                              "Cost",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleMedium!
+                                  .copyWith(
                                     color: Colors.black54,
                                     fontWeight: FontWeight.bold,
                                   ),
-                                ),
-                              ],
                             ),
                           ],
                         ),
-                        SizedBox(),
+                        SizedBox(
+                          height: 10,
+                        ),
                         Row(
                           children: [
                             Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
                                     ElevatedButton(
                                       onPressed: () {},
@@ -883,10 +830,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                         size: 10,
                                       ),
                                       style: ElevatedButton.styleFrom(
-                                        minimumSize: Size(25, 35),
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 0,
+                                        ),
+                                        minimumSize: Size(22, 25),
                                         shape: CircleBorder(),
-                                        padding:
-                                            EdgeInsets.fromLTRB(1, 1, 1, 1),
                                         backgroundColor: Colors.green,
                                       ),
                                     ),
@@ -907,16 +855,12 @@ class _MyHomePageState extends State<MyHomePage> {
                             const SizedBox(
                               width: 54,
                             ),
-                            Row(
-                              children: [
-                                Text(
-                                  '0,42% P.A.',
-                                  style: TextStyle(
-                                    color: Colors.black87,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ],
+                            Text(
+                              '0,42% P.A.',
+                              style: TextStyle(
+                                color: Colors.black87,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ],
                         ),
@@ -928,6 +872,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     indent: 20,
                     endIndent: 20,
                   ),
+                  // End of the fourth container
                 ],
               ),
             ),
